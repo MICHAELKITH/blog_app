@@ -1,0 +1,25 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: my_blog_app
+  username: postgres
+  password: slofile
+
+development:
+  <<: *default
+  database: my_blog_app
+  username: postgres
+  password: slofile
+
+test:
+  <<: *default
+  database: my_blog_app
+  username: postgres
+  password: slofile
+
+production:
+  <<: *default
+  database: my_blog_app
+  username: postgres
+  password: slofile
