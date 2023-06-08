@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  port: 5432
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+ 
+development:
+  <<: *default
+  database: blog_app
+  username: postgres
+  password: slofile
+
+
+test:
+  <<: *default
+  database: blog_app
+  username: postgres
+  password: slofile
+
+production:
+  <<: *default
+  database: blog_app
+  username: postgres
+  password: slofile
