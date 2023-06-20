@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'the index of post', type: :feature do
   before :each do
     @user = User.create(
-      name: 'Mike',
+      name: 'mike',
       photo: 'https://www.shutterstock.com/image-vector/hi-hello-banner-speech-bubble-poster-1505210795',
       bio: 'Kenyan Developer',
       postsCounter: 0
@@ -11,7 +11,7 @@ RSpec.describe 'the index of post', type: :feature do
     @post = Post.create(author_id: @user.id, title: 'title', text: 'My post of mike', commentsCounter: 0,
                         likesCounter: 0)
     Comment.create(post_id: @post.id, author_id: @user.id, text: 'curious comment')
-    Comment.create(post_id: @post.id, author_id: @user.id, text: 'This osama comment')
+    Comment.create(post_id: @post.id, author_id: @user.id, text: 'This mike comment')
     visit user_posts_path(@user.id)
   end
 
@@ -32,7 +32,7 @@ RSpec.describe 'the index of post', type: :feature do
   end
 
   it 'body of a post' do
-    expect(page).to have_content('My post of osama')
+    expect(page).to have_content('My post of mike')
   end
 
   it 'comments of a post' do
