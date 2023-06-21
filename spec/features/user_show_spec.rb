@@ -8,11 +8,11 @@ RSpec.describe 'idex user', type: :feature do
       bio: 'Programmer',
       postsCounter: 0
     )
-    @post1 = Post.create(author_id: @user.id, title: 'title osama', text: 'mike post one', commentsCounter: 0,
+    @post1 = Post.create(author_id: @user.id, title: 'title osama', text: 'osama post one', commentsCounter: 0,
                          likesCounter: 0)
-    @post2 = Post.create(author_id: @user.id, title: 'my title of osama', text: 'mike post two', commentsCounter: 0,
+    @post2 = Post.create(author_id: @user.id, title: 'my title of osama', text: 'osama post two', commentsCounter: 0,
                          likesCounter: 0)
-    @post3 = Post.create(author_id: @user.id, title: 'mike title', text: 'mike post three', commentsCounter: 0,
+    @post3 = Post.create(author_id: @user.id, title: 'osama title', text: 'osama post three', commentsCounter: 0,
                          likesCounter: 0)
     visit user_path(@user.id)
   end
