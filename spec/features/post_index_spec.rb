@@ -5,10 +5,10 @@ RSpec.describe 'the index of post', type: :feature do
     @user = User.create(
       name: 'mike',
       photo: 'https://www.shutterstock.com/image-vector/hi-hello-banner-speech-bubble-poster-1505210795',
-      bio: 'Kenyan Developer',
+      bio: 'Kenyan developer',
       postsCounter: 0
     )
-    @post = Post.create(author_id: @user.id, title: 'title', text: 'My post of mike', commentsCounter: 0,
+    @post = Post.create(author_id: @user.id, title: 'title', text: 'My post of osama', commentsCounter: 0,
                         likesCounter: 0)
     Comment.create(post_id: @post.id, author_id: @user.id, text: 'curious comment')
     Comment.create(post_id: @post.id, author_id: @user.id, text: 'This mike comment')
@@ -32,7 +32,7 @@ RSpec.describe 'the index of post', type: :feature do
   end
 
   it 'body of a post' do
-    expect(page).to have_content('My post of mike')
+    expect(page).to have_content('My post of osama')
   end
 
   it 'comments of a post' do

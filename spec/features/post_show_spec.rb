@@ -1,13 +1,15 @@
+require 'rails_helper'
+
 RSpec.describe 'pooost index', type: :feature do
   before :each do
     @user = User.create(
       name: 'mike',
       photo: 'https://www.shutterstock.com/image-vector/hi-hello-banner-speech-bubble-poster-1505210795',
-      bio: 'kenyan Developer',
+      bio: 'Kenyan developer',
       postsCounter: 0
     )
     @usersalem = User.create(
-      name: 'Salem',
+      name: 'max',
       photo: 'https://www.shutterstock.com/image-vector/hi-hello-banner-speech-bubble-poster-1505210795',
       bio: 'American programmer',
       postsCounter: 0
@@ -40,7 +42,7 @@ RSpec.describe 'pooost index', type: :feature do
   end
 
   it 'username of commenter' do
-    expect(page).to have_content('Salem')
+    expect(page).to have_content('max')
   end
 
   it 'comment of commenter' do
